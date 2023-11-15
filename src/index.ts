@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import countryRouter from './routes/contry.routes.js'
 
 const port = 3000;
 const app = express();
@@ -52,6 +53,8 @@ app.post('/end-cookie', (req: Request, res: Response) => {
   }
 });
 
+
+app.use('/country', countryRouter);
 
 app.listen(port, () => {
   console.log(`Now listening on port ${port}`);
