@@ -1,10 +1,21 @@
 import { Router } from "express";
 
-import { getCountries, searchCountryByName } from "../controllers/country.controller.js";
+import CountryController from "../controllers/country.controller.js";
 
-const router = Router();
+export default class CountryRouter {
+    private controller: CountryController;
+    private router = Router();
 
-router.get('/all', getCountries);
-router.get('/find-name/:value', searchCountryByName);
+    constructor(controller: CountryController) {
+        this.controller = controller;
 
-export default router;
+        this.router.get('/all', this.controller.getCountries);
+        this.router.get('/find-name/:value', this.controller.searchCountryByName);
+
+        this.getRouter = this.getRouter.bind(this);
+    }
+
+    getRouter(): Router {
+        return this.router;
+    }
+}
