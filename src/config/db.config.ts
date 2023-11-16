@@ -1,3 +1,3 @@
-import countries from './countries.json' assert { type: 'json'};
+import countries from './countries.json';
 
 export default countries;

@@ -1,26 +1,26 @@
 import { describe } from "node:test";
 import request from 'supertest';
-import { Country } from "../Interfaces/types.js";
 
-const baseURL = "http://localhost:3000"
+import { Country } from "../Interfaces/types";
+import app from '../index';
 
 describe("GET /countries", () => {
   it('Should return 200', async () => {
-    const response = await request(baseURL).get('/countries/all');
+    const response = await request(app).get('/countries/all');
 
     expect(response.statusCode).toBe(200);
     expect(response.body.error).toBe(undefined);
   })
 
   it('Should return countries', async () => {
-    const response = await request(baseURL).get('/countries/all');
+    const response = await request(app).get('/countries/all');
 
     expect(response.statusCode).toBe(200);
     expect(response.body.length >= 1).toBe(true);
   })
 
   it('Should return Bolivia', async () => {
-    const response = await request(baseURL).get('/countries/find-name/Bolivia');
+    const response = await request(app).get('/countries/find-name/Bolivia');
 
     expect(response.statusCode).toBe(200);
     expect(response.body.length).toBe(1);
@@ -31,7 +31,7 @@ describe("GET /countries", () => {
       name: 'mock',
       code: 'mk'
     }
-    const response = await request(baseURL).post('/countries/add').send(countryToAdd);
+    const response = await request(app).post('/countries/add').send(countryToAdd);
 
     expect(response.statusCode).toBe(201);
     expect(response.body).toEqual(countryToAdd);

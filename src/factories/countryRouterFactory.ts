@@ -1,6 +1,6 @@
-import CountryController from "../controllers/country.controller.js";
-import CountryRepository from "../repositories/country.repository.js";
-import CountryRouter from "../routes/country.routes.js";
+import CountryController from "../controllers/country.controller";
+import CountryRepository from "../repositories/country.repository";
+import CountryRouter from "../routes/country.routes";
 
 export default class CountryRouterFactory {
 

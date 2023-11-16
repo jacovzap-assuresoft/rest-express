@@ -1,12 +1,15 @@
 {
     "compilerOptions": {
-      "module": "NodeNext",
-      "moduleResolution": "NodeNext",
+      "moduleResolution": "Node10",
       "target": "ES2020",
       "sourceMap": true,
       "outDir": "dist",
       "esModuleInterop": true,
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@/*": ["*"] // Adjust this to match your project structure
+      },
     },
     "include": ["src/**/*"],
 }

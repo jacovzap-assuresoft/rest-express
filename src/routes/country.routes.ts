@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import CountryController from "../controllers/country.controller.js";
+import CountryController from "../controllers/country.controller";
 
 export default class CountryRouter {
     private controller: CountryController;

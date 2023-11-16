@@ -1,5 +1,5 @@
-import { Country } from "../Interfaces/types.js";
-import CountryRepository from "../repositories/country.repository.js";
+import { Country } from "../Interfaces/types";
+import CountryRepository from "../repositories/country.repository";
 import { Request, Response } from 'express';
 
 export default class CountryController {

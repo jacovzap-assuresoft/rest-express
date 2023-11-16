@@ -1,5 +1,5 @@
-import { Country } from '../Interfaces/types.js';
-import countries from '../config/db.config.js';
+import { Country } from '../Interfaces/types';
+import countries from '../config/db.config';
 
 export default class CountryRepository {
 
