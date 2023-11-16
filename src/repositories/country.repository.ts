@@ -6,6 +6,5 @@ export const getAllCountriesRepository: () => Array<Country> = () => {
 }
 
 export const searchCountryByNameRepository: (searchValue: string) => Array<Country> = (searchValue: string) => {
-  countries.filter((country) => country.name.match(new RegExp(searchValue, 'i')))
-  return countries;
+  return countries.filter((country) => country.name.match(new RegExp(searchValue, 'i')))
 }

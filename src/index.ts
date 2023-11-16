@@ -54,7 +54,7 @@ app.post('/end-cookie', (req: Request, res: Response) => {
 });
 
 
-app.use('/country', countryRouter);
+app.use('/countries', countryRouter);
 
 app.listen(port, () => {
   console.log(`Now listening on port ${port}`);
