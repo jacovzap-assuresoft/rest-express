@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import countryRouter from './routes/contry.routes.js'
+import countryRouter from './routes/country.routes.js'
 
 const port = 3000;
 const app = express();
