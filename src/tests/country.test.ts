@@ -1,5 +1,6 @@
 import { describe } from "node:test";
 import request from 'supertest';
+import { Country } from "../Interfaces/types.js";
 
 const baseURL = "http://localhost:3000"
 
@@ -23,5 +24,16 @@ describe("GET /countries", () => {
 
     expect(response.statusCode).toBe(200);
     expect(response.body.length).toBe(1);
+  })
+
+  it('Should add a country', async () => {
+    const countryToAdd: Country = {
+      name: 'mock',
+      code: 'mk'
+    }
+    const response = await request(baseURL).post('/countries/add').send(countryToAdd);
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body).toEqual(countryToAdd);
   })
 });

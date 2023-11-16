@@ -7,12 +7,17 @@ export default class CountryRepository {
 
   }
 
-  getAllCountriesRepository (): Array<Country> {
+  getAllCountries (): Array<Country> {
     return countries;
   }
 
-  searchCountryByNameRepository (searchValue: string): Array<Country> {
+  searchCountryByName (searchValue: string): Array<Country> {
     return countries.filter((country) => country.name.match(new RegExp(searchValue, 'i')))
+  }
+
+  addCountry (country: Country): Country {
+    countries.push(country);
+    return country;
   }
 
 }
