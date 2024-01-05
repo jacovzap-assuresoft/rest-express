@@ -2,7 +2,6 @@ import { Country } from "../Interfaces/types";
 import CountryRepository from "../repositories/country.repository";
 import { Request, Response } from 'express';
 
-
 export default class CountryController {
 
   private repository: CountryRepository;
